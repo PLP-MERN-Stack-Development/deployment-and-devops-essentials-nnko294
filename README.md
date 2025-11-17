@@ -26,6 +26,14 @@ You will:
 - `.env.example`: Example environment variable templates
 - `monitoring/`: Monitoring configuration examples
 
+## Scaffolding added
+
+- Added `.env.example` template for environment variables.
+- Added `deployment/Dockerfile` and `deployment/render.yaml` as Render templates.
+- Added `netlify.toml` for Netlify frontend deployment.
+- Added GitHub Actions workflows in `.github/workflows/` to run CI and deploy to Render and Netlify.
+- Added `monitoring/healthcheck.md` with healthcheck and Sentry guidance.
+
 ## Requirements
 
 - A completed MERN stack application from previous weeks
