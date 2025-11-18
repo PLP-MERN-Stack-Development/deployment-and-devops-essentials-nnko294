@@ -22,6 +22,22 @@ This document describes how to connect the repository to Render (backend) and Ne
   3. Add `RENDER_SERVICE_ID` and `RENDER_API_KEY` to GitHub Secrets.
   4. Push to `main` — GitHub Actions will run CI and then `backend-cd-render.yml` will deploy.
 
+3) MongoDB Atlas setup (backend)
+
+- Create a MongoDB Atlas cluster if you haven't already.
+- Create a database user with a strong password and give it access to the cluster.
+- Obtain the connection string (connection URI). It will look like:
+
+```
+mongodb+srv://<dbUser>:<password>@cluster0.abcd123.mongodb.net/myDatabase?retryWrites=true&w=majority
+```
+
+- Add the connection string to your Render service environment variables as `MONGODB_URI` and (optionally) add the same string as a GitHub Actions secret `MONGODB_URI` if you need to reference it in workflows.
+- In the sample backend, if `MONGODB_URI` is present the app will attempt to connect on startup and `/health` will include `dbStatus: connected|connecting|error`.
+
+4) Frontend (Netlify)
+
+
 3) Frontend (Netlify)
 
 - We included a `netlify.toml` and a minimal `frontend/` placeholder that builds to `frontend/build`.
