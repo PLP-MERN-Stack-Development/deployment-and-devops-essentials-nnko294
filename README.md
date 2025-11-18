@@ -64,6 +64,20 @@ The assignment includes templates for setting up GitHub Actions workflows:
 - `frontend-cd.yml`: Deploys the frontend to your chosen platform
 - `backend-cd.yml`: Deploys the backend to your chosen platform
 
+## CI / CD Status
+
+You can monitor the repository workflows using these status badges (they update automatically):
+
+- Backend CI: ![Backend CI](https://github.com/PLP-MERN-Stack-Development/deployment-and-devops-essentials-nnko294/actions/workflows/backend-ci.yml/badge.svg)
+- Frontend CI: ![Frontend CI](https://github.com/PLP-MERN-Stack-Development/deployment-and-devops-essentials-nnko294/actions/workflows/frontend-ci.yml/badge.svg)
+- Backend Deploy (Render): ![Backend Deploy](https://github.com/PLP-MERN-Stack-Development/deployment-and-devops-essentials-nnko294/actions/workflows/backend-cd-render.yml/badge.svg)
+- Frontend Deploy (Netlify): ![Frontend Deploy](https://github.com/PLP-MERN-Stack-Development/deployment-and-devops-essentials-nnko294/actions/workflows/frontend-cd-netlify.yml/badge.svg)
+
+## Add GitHub Secrets
+
+To enable deployments and Sentry, add these repository secrets: `RENDER_SERVICE_ID`, `RENDER_API_KEY`, `NETLIFY_AUTH_TOKEN`, `NETLIFY_SITE_ID`, and (optional) `SENTRY_DSN`. Go to `Settings → Secrets and variables → Actions` and create new repository secrets with those names.
+
+
 ## Submission
 
 Your work will be automatically submitted when you push to your GitHub Classroom repository. Make sure to:
