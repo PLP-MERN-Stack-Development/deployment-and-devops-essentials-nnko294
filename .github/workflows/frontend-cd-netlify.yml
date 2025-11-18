@@ -15,13 +15,13 @@ jobs:
           node-version: '18'
       - name: Build frontend
         run: |
-          cd frontend || exit 0
+          cd frontend
           npm ci
           npm run build
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v1.2
         with:
-          publish-dir: frontend/build
+          publish-dir: frontend/dist
           production-branch: main
           deploy-message: "Deploy from GitHub Actions"
         env:
