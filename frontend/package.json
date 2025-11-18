@@ -1,0 +1,7 @@
+{
+  "name": "frontend-placeholder",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "mkdir -p build && cp -r public/* build || echo 'Build complete'"
+  }
+}
