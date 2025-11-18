@@ -37,9 +37,6 @@ mongodb+srv://<dbUser>:<password>@cluster0.abcd123.mongodb.net/myDatabase?retryW
 
 4) Frontend (Netlify)
 
-
-3) Frontend (Netlify)
-
 - We included a `netlify.toml` and a minimal `frontend/` placeholder that builds to `frontend/build`.
 - The GitHub Action `frontend-cd-netlify.yml` builds `frontend/` and uses `nwtgck/actions-netlify` to deploy using `NETLIFY_AUTH_TOKEN` and `NETLIFY_SITE_ID`.
 - Steps to deploy:
@@ -62,7 +59,7 @@ Pop-Location
 ```
 
 - Frontend placeholder:
-  - The `frontend` folder contains a minimal static site and a `build` script that copies `public/` to `build/` for Netlify. To build locally:
+  - The `frontend` folder contains your Vite React app that builds to `frontend/dist/`. To build locally:
 
 ```powershell
 Push-Location .\frontend
@@ -77,5 +74,5 @@ Pop-Location
 
 6) Notes & troubleshooting
 
-- If your repository already contains a frontend React app, move it into `frontend/` or update the workflows to point to your existing path.
-- The minimal frontend placeholder is intended only to allow CI/CD flow demonstration; replace it with your real app before final submission.
+- If your repository already contains a frontend React app, it is now in `frontend/` (the Vite build outputs to `frontend/dist/`).
+- For production, ensure proper security: use least-privilege DB user roles, restrict IP access, rotate credentials, enable backups.
